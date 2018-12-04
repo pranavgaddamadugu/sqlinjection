@@ -16,7 +16,7 @@ $sql = "SELECT * FROM secrets WHERE Num=?";
 $stmt = mysqli_prepare($connect, $sql);
 mysqli_stmt_bind_param($stmt, 'i', $num);
 
-$num = $_GET["num"];
+$num =  mysql_real_escape_string($_GET["num"]);
 
 
 //Don't need to insert id since it's an PRI_KEY A_I
